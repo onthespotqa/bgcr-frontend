@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import * as Sentry from '@sentry/browser';
 import { Switch, BrowserRouter as Router } from 'react-router-dom'
 import './App.css';
 import KeyedRoute from './components/KeyedRoute'
@@ -10,6 +11,7 @@ import GuruIndex from "./views/Gurus";
 import GuruFoundationNew from "./views/Foundations/new";
 import GuruEdit from "./views/Gurus/edit";
 
+Sentry.init({dsn: "https://28a51e6fa71a4511baa3544bf12a524c@sentry.io/1765085"});
 
 class App extends Component {
   constructor() {
