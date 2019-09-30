@@ -116,6 +116,17 @@ class GuruForm extends Component {
                           }
                         />
                         <FormControlLabel
+                          label="Combination/Oly"
+                          control={
+                            <Field
+                              name="skin"
+                              component={Radio}
+                              type="checkbox"
+                              value="combo_oily"
+                            />
+                          }
+                        />
+                        <FormControlLabel
                           label="Normal/Dry"
                           control={
                             <Field
