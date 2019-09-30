@@ -31,7 +31,7 @@ const guru = {
 }
 
 const onSubmit = async values => {
-  fetch('/api/v1/gurus',{
+  fetch(`${process.env.REACT_APP_API_URL}/api/v1/gurus`,{
     method: "POST",
     body: JSON.stringify(values),
     headers: {

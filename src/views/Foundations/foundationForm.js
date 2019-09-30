@@ -26,7 +26,7 @@ class FoundationForm extends Component {
     handleFormSubmit(e) {
         debugger
         let foundationData = this.state.newFoundation;
-        fetch(`/api/v1/gurus/${this.state.params.id}/foundations`,{
+        fetch(`${process.env.REACT_APP_API_URL}/api/v1/gurus/${this.state.params.id}/foundations`,{
             method: "POST",
             body: JSON.stringify(foundationData),
             headers: {

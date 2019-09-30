@@ -31,19 +31,20 @@ class GuruIndex extends Component {
       isFetching: false,
       gurus: [],
     };
+
+  }
+  componentDidMount() {
     this.setState({...this.state, isFetching: true});
-    fetch(`/api/v1/gurus`)
+    fetch(`${process.env.REACT_APP_API_URL}/api/v1/gurus`)
       .then(res => res.json())
       .then((data) => {
         this.setState({gurus: data})
       })
-      .catch(console.log)
   }
 
   deleteGuru(index) {
     const id = this.state.gurus[index].id
-    console.log('Deleted ' + this.state.gurus[index])
-    fetch(`/api/v1/gurus/${id}`, {method: 'DELETE'})
+    fetch(`${process.env.REACT_APP_API_URL}/api/v1/gurus/${id}`, {method: 'DELETE'})
   }
 
   render() {
