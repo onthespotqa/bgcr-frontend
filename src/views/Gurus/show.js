@@ -37,7 +37,7 @@ class Guru extends Component {
   }
 
   componentDidMount() {
-    fetch(`${process.env.REACT_APP_API_URL}/api/v1${props.location.pathname}`)
+    fetch(`${process.env.REACT_APP_API_URL}/api/v1${this.props.location.pathname}`)
       .then(res => res.json())
       .then((data) => {
         this.setState({gurus: data, loaded: true})
